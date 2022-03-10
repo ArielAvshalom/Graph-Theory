@@ -1,0 +1,46 @@
+#things that can be used everywhere Global variables
+n = number of nodes in a graph
+g = adjacency list representing the graph
+visited = {node : false} #size n
+
+def dfs(node_of_interest):
+	if visited[node_of_interest] : return
+	
+	visited[node_of_interest] = True
+
+	neighbors = g[node_of_interest]
+	for neighbor in neighbors:
+		dfs(neighbor)
+
+start_node = 0
+dfs(start_node)
+
+
+
+n = number of nodes in a graph
+g = adjacency list representing the graph
+count = 0
+components = integer array [1,1,1,2,2,2]
+visited {node : false}
+
+def Do you afindComponents():
+	for node in range(n): #n = 10 0-9
+		if !visited[node]:
+			count++
+			dfs(node)
+		return (count, components)
+
+def dfs(node_of_interest):
+	visited[node_of_interest] = True
+	components[node_of_interest] = count
+	for neighbor in g[node_of_interest]:
+		if !visited[neighbor]:
+			dfs[neighbor]
+
+
+
+
+
+
+
+
