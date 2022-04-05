@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page to edit our DOM</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+    <!-- <script src='main.js'></script> -->
+
+    <script>
+        function setBodyAttr(attr, value) {
+            if (document.body) document.body[attr] = value;
+            else throw new Error("no support for this attribute")
+        }
+    </script>
+
+</head>
+<body>
+    <div>
+        <form>
+            <p><b><code>Here is text</code></b></p>
+            <select onChange="setBodyAttr('text', this.options[this.selectedIndex].value);">
+                <option value = "black">black</option>
+                <option value = "blue">blue</option>
+            </select>
+
+            <p><b><code>look at the background color</code></b></p>
+            <select onChange="setBodyAttr('bgColor', this.options[this.selectedIndex].value);">
+                <option value = "lightgray">light gray</option>
+                <option value = "green">green</option>
+            </select>
+
+            <p><b><code>let's change links</code></b></p>
+            <select onChange="setBodyAttr('link', this.options[this.selectedIndex].value);">
+                <option value = "yellow">yellow</option>
+                <option value = "blue">blue</option>
+            </select>
+
+            <small>
+                <a href="example.com/blah" class="link">Here is our sample link</a>
+            </small>
+        </form>
+    </div>
+</body>
+</html>
